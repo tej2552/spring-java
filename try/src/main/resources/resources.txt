@@ -1,0 +1,37 @@
+VOLATILE KEYWORD IN JAVA
+_________________________
+
+Using volatile is yet another way (like synchronized, atomic wrapper) of making class thread-safe.
+Thread-safe means that a method or class instance can be used by multiple threads at the same time without any problem.
+Suppose that two threads are working on SharedObj. If two threads run on different processors each thread may have its own local copy of sharedVariable.
+If one thread modifies its value the change might not reflect in the original one in the main memory instantly. This depends on the write policy of cache.
+Now the other thread is not aware of the modified value which leads to data inconsistency.
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+SYNCHRONISED
+_________________________
+
+When the same function is being called by more than 1 thread, and the function is not synchronised, it may cause issue in the variable's values in both the threads.
+So when we use synchronised functions, it will help in avoiding this issue.
+
+Every object has an intrinsic lock associated with it. By convention, a thread that needs exclusive and consistent access to an object's fields has to acquire the
+object's intrinsic lock before accessing them, and then release the intrinsic lock when it's done with them.
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+MULTIPLE LOCKS
+
+Lets say we have two threads running and calling a synchronised method. So as stated earlier each object will have an intrinsic lock. So a synched method can be
+accessed by 1 thread at a time and another thread will be waiting until the lock is released to access it.
+This is helpful when the synchronised methods are using the same variable or data source to read and write. But if we have both the threads doing the operations on
+different data sources, this will work but it will consume time.
+So we can provide a custom intrinsic locks for each methods being accessed by different threads and it will take less time
+
+________________________________________________________________________________________________________________________________________________________________________________________________________
+
+EXECUTORR SERVICE
+
+https://dzone.com/articles/deep-dive-into-java-executorservice
+
+________________________________________________________________________________________________________________________________________________________________________________________________________

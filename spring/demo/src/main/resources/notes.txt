@@ -1,0 +1,21 @@
+//Issue when we have multiple component classes
+
+When we have multiple component classes and the spring is confused to create the object. So we make use of qualifier annotation and we pass the component class name
+in the lower case while initialising the constructor of the controller class.
+
+There is one more solution for this multiple component class issue, which is primary annotation. In this case we mark a component class as primary
+and the controller class will create an object of that class, so no need to pass the qualifier annotation.
+But if we mark a class as primary and we pass the qualifier annotation to the controller class as well, at this moment it will create the object for the class
+mentioned in the qualifier annotation, as the priority is higher than the primary annotation
+
+____________________________________________________________________________________________________________________________________________________________________
+
+//Lazy Initialisation
+
+When ever the spring application is run, it creates the objects of all the component classes before hand and then passes it when ever required.
+This might lead to huge loading time in case of big applications where we have lots of classes.
+So lazy initialisation helps us to tackle this. If we make any component class as lazy, then the spring wont create the object of it at the start, instead it
+creates whenever it is required or demanded.
+So lazy annotation is used.
+
+____________________________________________________________________________________________________________________________________________________________________
