@@ -18,4 +18,23 @@ So lazy initialisation helps us to tackle this. If we make any component class a
 creates whenever it is required or demanded.
 So lazy annotation is used.
 
+If we have too many component classes in our project and we want to make all of the classes lazy, it would be very tedious.
+So we make use of a global property
+
+spring.main.lazy-initialization = true.
+____________________________________________________________________________________________________________________________________________________________________
+BEANS
+
+Beans are just the instance of the component class which are helpful for the spring framework to keep track use it whenever required. It just has the metadata
+of the class.
+
+There are few scopes of bean.
+By default the bean scope is singleton, which means all the objects are handled by a single bean instance.
+If you make the scope as prototype, it means each and every instance is managed by a seperate bean instance.
+
+Bean life cycle
+
+Using PostConstruct annotation on a method, we can tell the bean what to do after the spring app is initialised and the bean is constructed
+Using PreDestroy annotation on a method, we can tell the bean what to do just before the destruction of the bean instance.
+
 ____________________________________________________________________________________________________________________________________________________________________
