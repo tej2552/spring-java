@@ -10,7 +10,7 @@ public class Controller {
     private Instructor myInstructor;
 
     @Autowired
-    public Controller(@Qualifier("javaInstructor")Instructor myInstructor) {
+    public Controller(@Qualifier("pythonInstructor")Instructor myInstructor) {
         this.myInstructor = myInstructor;
     }
 
